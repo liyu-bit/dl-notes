@@ -21,7 +21,7 @@
 
 | 阶段 | 主题 | 对应章节 | 笔记 | 状态 |
 |:--|:--|:--|:--|:--|
-| S0 | 环境与工具 | Ch3 | [environment](notes/00-setup/environment.md) | 🚧 进行中 |
+| S0 | 环境与工具 | Ch3 | [environment](notes/00-setup/environment.md) | ✅ 已完成 |
 | S0 | 框架对比 | Ch3 | [frameworks-overview](notes/00-setup/frameworks-overview.md) | ⬜ 待写 |
 | S0 | GPU / CUDA 排错 | Ch3 | [gpu-cuda-troubleshooting](notes/00-setup/gpu-cuda-troubleshooting.md) | ⬜ 待写 |
 | S1 | 深度学习是什么 | Ch1 | [what-is-deep-learning](notes/01-foundations/what-is-deep-learning.md) | ⬜ 待写 |

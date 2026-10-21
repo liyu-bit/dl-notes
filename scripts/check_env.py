@@ -101,7 +101,7 @@ def main() -> int:
     if not info["torch_installed"]:
         print("PyTorch 未安装。")
         print("  CPU: pip install -r requirements.txt")
-        print("  GPU: pip install -r requirements-gpu.txt --index-url https://download.pytorch.org/whl/cu124")
+        print("  GPU: pip install -r requirements-gpu.txt --index-url https://download.pytorch.org/whl/cu126")
         return 1
 
     print(f"PyTorch CUDA 构建版本 : {info['torch_cuda_build'] or 'CPU-only'}")
@@ -117,8 +117,8 @@ def main() -> int:
     print("\n[警告] 装了 PyTorch 但 CUDA 不可用，按顺序排查：")
     print("  1. nvidia-smi —— 确认驱动正常、且驱动版本 >= 所需 CUDA 版本")
     print("  2. pip list | grep -i torch —— 确认没有 conda/pip 混装两套 torch")
-    print("  3. 笔记本 GPU 需 sm_89 架构，用官方 cu124 轮子重装")
-    print("  4. 重装：pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124")
+    print("  3. 笔记本 GPU 需 sm_89 架构，用官方 cu126 轮子重装")
+    print("  4. 重装：pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126")
     return 1
 
 

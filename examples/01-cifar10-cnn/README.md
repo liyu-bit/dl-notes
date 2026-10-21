@@ -26,7 +26,7 @@
 pip install -r ../../requirements.txt
 
 # GPU（RTX 4060 Laptop）
-pip install -r ../../requirements-gpu.txt --index-url https://download.pytorch.org/whl/cu124
+pip install -r ../../requirements-gpu.txt --index-url https://download.pytorch.org/whl/cu126
 ```
 
 自检：`python ../../scripts/check_env.py`

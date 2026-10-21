@@ -1,7 +1,11 @@
-# GPU 依赖（NVIDIA 驱动 + CUDA 12.4，适配 RTX 4060 Laptop / sm_89）
+# GPU 依赖 —— 本机实测配置（见 notes/00-setup/environment.md）
+#
+# 本机实际环境（2026-10 验证通过）：
+#   Python 3.12.15 · conda 环境名 dl ·驱动 571.96 · PyTorch 2.13.0+cu126
+#   GPU: RTX 4060 Laptop (sm_8.9, 8.0 GB)
 #
 # 安装（推荐先装驱动，再装 PyTorch）：
-#   pip install -r requirements-gpu.txt --index-url https://download.pytorch.org/whl/cu124
+#   pip install -r requirements-gpu.txt --index-url https://download.pytorch.org/whl/cu126
 #
 # 装完务必运行 python scripts/check_env.py 确认 torch.cuda.is_available() 为 True。
 #
@@ -9,7 +13,10 @@
 #   1. nvidia-smi 看驱动版本，驱动版本比 CUDA 版本更重要
 #   2. python -c "import torch; print(torch.version.cuda, torch.cuda.is_available())"
 #   3. 确认没混装 conda 与 pip 两套 torch：pip list | grep -i torch
-#   4. 笔记本 GPU 需 sm_89 架构支持，用官方 cu124 轮子
+#   4. 笔记本 GPU 需 sm_89 架构支持，用官方 cu126 轮子
+#
+# 注意：torch 的 cu 版本必须 ≤ 驱动支持的 CUDA 上限。本机驱动支持到 12.8，
+#      因此 cu124 / cu126 / cu128 都可以，cu126 是已实测的组合。
 
 torch>=2.4,<3.0
 torchvision>=0.19,<1.0
