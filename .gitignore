@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# 深度学习：数据集与模型权重（务必忽略，避免仓库体积暴涨）
+# 注意：前导 / 表示只匹配仓库根目录，避免误伤 assets/data/ 这类同名子目录
+/data/
+/datasets/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.h5
+*.hdf5
+*.onnx
+*.pb
+*.npz
+*.npy
+*.pkl
+*.joblib
+/runs/
+/checkpoints/
+/wandb/
+/lightning_logs/
+/mlruns/
+/dvc/
+/outputs/runs/
+/outputs/weights/
+
+# 日志
+*.log
+logs/
+*.out
+err.log
+
+# 缓存
+.cache/
+.ipynb/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 密钥与凭据（任何情况下都不要提交）
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+credentials.json
+secrets/

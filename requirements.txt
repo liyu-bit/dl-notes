@@ -1,0 +1,20 @@
+# CPU 基线依赖：足以跑通所有示例的最小集合
+# 安装：pip install -r requirements.txt
+#
+# 注意：torch 默认从 PyPI 装的是 CPU 版（或体积很大的 CUDA 版）。
+# GPU 请改用 requirements-gpu.txt。
+
+torch>=2.4,<3.0
+torchvision>=0.19,<1.0
+numpy>=1.26,<3.0
+scipy>=1.11
+scikit-learn>=1.4
+pandas>=2.1
+matplotlib>=3.8
+seaborn>=0.13
+pyyaml>=6.0
+tqdm>=4.66
+tensorboard>=2.15
+jupyter>=1.0
+notebook>=7.0
+ipykernel>=6.29

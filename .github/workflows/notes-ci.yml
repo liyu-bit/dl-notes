@@ -1,0 +1,48 @@
+name: notes-ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 检查 Markdown 内部链接
+        run: |
+          pip install markdown-link-check
+          find . -name "*.md" -not -path "./.git/*" -print0 \
+            | xargs -0 -n1 markdown-link-check --quiet \
+            || echo "::warning::存在失效链接，请检查"
+
+      - name: 检查代码块是否标注语言
+        run: |
+          python - <<'PY'
+          import pathlib, re, sys
+          bad = []
+          for p in pathlib.Path(".").rglob("*.md"):
+              if ".git" in p.parts:
+                  continue
+              lines = p.read_text(encoding="utf-8").splitlines()
+              in_block = False
+              for i, line in enumerate(lines, 1):
+                  if line.startswith("```"):
+                      if not in_block:
+                          in_block = True
+                          if line.strip() == "```":
+                              bad.append(f"{p}:{i} 代码块缺少语言标注")
+                      else:
+                          in_block = False
+          if bad:
+              print("::warning::" + "\\n".join(bad))
+          else:
+              print("所有代码块均已标注语言")
+          PY
+
+      - name: 检查示例代码语法
+        run: |
+          python -m compileall -q examples scripts || exit 1
