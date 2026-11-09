@@ -35,6 +35,7 @@
 | S2 | 卷积网络可解释性 | Ch10 | [convnet-interpretation](notes/02-cnn/convnet-interpretation.md) | ⬜ 待写 |
 | S2 | 图像分割 | Ch11 | [image-segmentation](notes/02-cnn/image-segmentation.md) | ⬜ 待写 |
 | S2 | 目标检测 | Ch12 | [object-detection](notes/02-cnn/object-detection.md) | ⬜ 待写 |
+| S3 | RNN 与 LSTM 原理 | Ch13–14 | [rnn-and-lstm](notes/03-sequence-and-text/rnn-and-lstm.md) | 🟡 初稿 |
 | S3 | 时间序列预测 | Ch13 | [timeseries-forecasting](notes/03-sequence-and-text/timeseries-forecasting.md) | ⬜ 待写 |
 | S3 | 文本分类 | Ch14 | [text-classification](notes/03-sequence-and-text/text-classification.md) | ⬜ 待写 |
 | S3 | 语言模型与 Transformer | Ch15 | [language-models-transformer](notes/03-sequence-and-text/language-models-transformer.md) | ⬜ 待写 |
