@@ -57,7 +57,7 @@ MLP 和 CNN 处理的是**相互独立**的样本：一张图片的像素、一�
 
 ### 2.1 RNN：按时间展开的同一单元
 
-![RNN 按时间步展开](https://cdn.jsdelivr.net/gh/liyu-bit/dl-notes@main/assets/images/rnn-unrolled.png)
+![RNN 按时间步展开](https://cdn.jsdelivr.net/gh/liyu-bit/dl-notes@a9152ee63988f0a5205948976bb898324c338985/assets/images/rnn-unrolled.png)
 
 三个时间步共享**同一组参数** `Wₓ、Wₕ、W_y`——这是「循环」的真正含义，也是 RNN 能处理任意长度序列的原因。
 
@@ -76,11 +76,11 @@ $$\frac{\partial L}{\partial h_{0}} \propto \prod_{t=1}^{T} \left( W_h^{\top}\,\
 | 梯度消失 | `σ_max(Wₕ) < 1` | 远处信息学不到（收不到纠错信号） | 改结构 → LSTM / GRU |
 | 梯度爆炸 | `σ_max(Wₕ) > 1` | 损失震荡、参数发散 | `clip_grad_norm_` 裁剪 |
 
-![梯度流对比](https://cdn.jsdelivr.net/gh/liyu-bit/dl-notes@main/assets/images/gradient-flow.png)
+![梯度流对比](https://cdn.jsdelivr.net/gh/liyu-bit/dl-notes@a9152ee63988f0a5205948976bb898324c338985/assets/images/gradient-flow.png)
 
 ### 2.3 LSTM：加法传送带 + 三个门
 
-![LSTM 单元结构](https://cdn.jsdelivr.net/gh/liyu-bit/dl-notes@main/assets/images/lstm-cell.png)
+![LSTM 单元结构](https://cdn.jsdelivr.net/gh/liyu-bit/dl-notes@a9152ee63988f0a5205948976bb898324c338985/assets/images/lstm-cell.png)
 
 $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \quad \text{（遗忘门）}$$
 $$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \quad \text{（输入门）}$$
